@@ -1,31 +1,39 @@
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    background: linear-gradient(135deg, #007BFF, #00C6FF);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
+    width: 90%;
     max-width: 600px;
-    margin: 50px auto;
     background: #fff;
-    padding: 20px;
+    color: #333;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
     text-align: center;
-    color: #444;
+    color: #007BFF;
+    margin-bottom: 20px;
 }
 
 .section {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
     color: #555;
 }
@@ -36,27 +44,78 @@ textarea {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ddd;
+    border: 2px solid #007BFF;
     border-radius: 5px;
+    resize: none;
 }
 
 button {
-    display: block;
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+.output-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 .output {
+    background: #f0f8ff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
     font-weight: bold;
     color: #007BFF;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+}
+
+.copy-btn {
+    background-color: #28a745;
+    transition: background 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #1e7e34;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    textarea {
+        height: 60px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .output-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
