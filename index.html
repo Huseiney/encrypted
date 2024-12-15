@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Encrypt/Decrypt Message</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Encrypt/Decrypt Message</h1>
-        
+
         <!-- Encrypt Section -->
         <div class="section">
             <h2>Encrypt a Message</h2>
             <textarea id="encrypt-input" placeholder="Enter text to encrypt"></textarea>
             <button onclick="encryptMessage()">Encrypt</button>
             <p>Encrypted Message:</p>
-            <p id="encrypt-output" class="output"></p>
+            <div class="output-container">
+                <p id="encrypt-output" class="output"></p>
+                <button class="copy-btn" onclick="copyText('encrypt-output')">Copy</button>
+            </div>
         </div>
 
         <!-- Decrypt Section -->
@@ -25,7 +28,10 @@
             <textarea id="decrypt-input" placeholder="Enter numbers (comma-separated)"></textarea>
             <button onclick="decryptMessage()">Decrypt</button>
             <p>Decrypted Message:</p>
-            <p id="decrypt-output" class="output"></p>
+            <div class="output-container">
+                <p id="decrypt-output" class="output"></p>
+                <button class="copy-btn" onclick="copyText('decrypt-output')">Copy</button>
+            </div>
         </div>
     </div>
 
