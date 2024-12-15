@@ -16,7 +16,7 @@ for (const [letter, number] of Object.entries(letterToNumber)) {
 function encryptMessage() {
     const message = document.getElementById('encrypt-input').value.toUpperCase();
     let encryptedMessage = [];
-    
+
     for (const char of message) {
         if (char in letterToNumber) {
             encryptedMessage.push(letterToNumber[char]);
@@ -43,4 +43,14 @@ function decryptMessage() {
     }
 
     document.getElementById('decrypt-output').textContent = decryptedMessage.join('');
+}
+
+// Function to copy text
+function copyText(elementId) {
+    const text = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard!");
+    }).catch(err => {
+        console.error("Could not copy text: ", err);
+    });
 }
